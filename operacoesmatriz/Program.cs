@@ -5,14 +5,14 @@ double[,] matrixA = new double[rows, columns];
 double[,] matrixB = new double[rows, columns];
 double[,] result = new double[rows, columns];
 
-for (int i = 0; i < rows; i++)
-    for (int j = 0; j < columns; j++)
-    {
-        matrixA[i, j] = new Random().Next(0, 10);
-        matrixB[i, j] = new Random().Next(0, 10);
-    }
+void randomizeMatrix(double[,] matrix, int min = 0, int max = 10)
+{
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            matrix[i, j] = new Random().Next(min, max);
+}
 
-void printMatrix(double[,] matrix )
+void printMatrix(double[,] matrix)
 {
     for (int i = 0; i < rows; i++)
     {
@@ -22,6 +22,9 @@ void printMatrix(double[,] matrix )
         Console.WriteLine();
     }
 }
+
+randomizeMatrix(matrixA);
+randomizeMatrix(matrixB);
 
 Console.WriteLine("Matriz A:\n");
 
