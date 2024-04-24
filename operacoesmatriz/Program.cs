@@ -12,25 +12,24 @@ for (int i = 0; i < rows; i++)
         matrixB[i, j] = new Random().Next(0, 10);
     }
 
+void printMatrix(double[,] matrix )
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+            Console.Write($"{matrix[i, j].ToString("0.0")} ");
+
+        Console.WriteLine();
+    }
+}
+
 Console.WriteLine("Matriz A:\n");
 
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-        Console.Write($"{matrixA[i, j]} ");
-
-    Console.WriteLine();
-}
+printMatrix(matrixA);
 
 Console.WriteLine("\nMatriz B:\n");
 
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-        Console.Write($"{matrixB[i, j]} ");
-
-    Console.WriteLine();
-}
+printMatrix(matrixB);
 
 for (int i = 0; i < rows; i++)
     for (int j = 0; j < columns; j++)
@@ -38,13 +37,7 @@ for (int i = 0; i < rows; i++)
 
 Console.WriteLine("\nSoma:\n");
 
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-        Console.Write($"{result[i, j]} ");
-
-    Console.WriteLine();
-}
+printMatrix(result);
 
 for (int i = 0; i < rows; i++)
     for (int j = 0; j < columns; j++)
@@ -52,13 +45,7 @@ for (int i = 0; i < rows; i++)
 
 Console.WriteLine("\nSubtração:\n");
 
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-        Console.Write($"{result[i, j]} ");
-
-    Console.WriteLine();
-}
+printMatrix(result);
 
 for (int i = 0; i < rows; i++)
     for (int j = 0; j < columns; j++)
@@ -66,13 +53,7 @@ for (int i = 0; i < rows; i++)
 
 Console.WriteLine("\nMultiplicação:\n");
 
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-        Console.Write($"{result[i, j]} ");
-
-    Console.WriteLine();
-}
+printMatrix(result);
 
 for (int i = 0; i < rows; i++)
     for (int j = 0; j < columns; j++)
@@ -88,10 +69,4 @@ for (int i = 0; i < rows; i++)
 
 Console.WriteLine("\nDivisão:\n");
 
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-        Console.Write($"{result[i, j].ToString("0.0")} ");
-
-    Console.WriteLine();
-}
+printMatrix(result);
