@@ -79,7 +79,7 @@ for (int i = 0; i < rows; i++)
     {
         if (matrixB[i, j] == 0)
         {
-            result[i, j] = 0;
+            result[i, j] = double.NaN;
             continue;
         }
 
