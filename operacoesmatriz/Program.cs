@@ -1,9 +1,14 @@
 ﻿int rows = 3;
 int columns = 3;
 
-double[,] matrixA = new double[rows, columns];
-double[,] matrixB = new double[rows, columns];
-double[,] result = new double[rows, columns];
+double[,] createMatrix(int rows, int columns)
+{
+    if (rows < 1 || columns < 1)
+        return null;
+
+    return new double[rows, columns];
+}
+
 void randomizeMatrix(double[,] matrix, int min = 0, int max = 10)
 {
     for (int i = 0; i < rows; i++)
@@ -61,6 +66,10 @@ char selectOperatorMenu()
     return operation;
 }
 
+double[,] matrixA = createMatrix(rows, columns);
+double[,] matrixB = createMatrix(rows, columns);
+double[,] result = createMatrix(rows, columns);
+
 randomizeMatrix(matrixA);
 randomizeMatrix(matrixB);
 
@@ -76,7 +85,7 @@ Console.WriteLine();
 
 char operation = selectOperatorMenu();
 
-Console.WriteLine($"\nResultado ({operation}):");
+Console.WriteLine($"\nResultado ({operation}):\n");
 
 for (int i = 0; i < rows; i++)
     for (int j = 0; j < rows; j++)
